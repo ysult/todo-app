@@ -1,0 +1,350 @@
+body {
+    margin: 0;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+body.light {
+    background-image: url("../images/bg-desktop-light.jpg");
+    background-color: white;
+}
+
+body.dark {
+    background-image: url("../images/bg-desktop-dark.jpg");
+    background-color: black;
+}
+
+input {
+    margin-left: 15px;
+    width: 30vw;
+    line-height: 100%;
+    border: none;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+    font-size: 15px;   
+}
+
+hr {
+    margin: 0;
+    height: 1px;
+    border: none;
+}
+
+hr.light{
+    background-color: hsl(233, 11%, 84%);
+}
+
+hr.dark{
+    background-color: hsl(233, 14%, 35%);
+}
+
+button {
+    all: unset;
+    cursor: pointer;
+  }
+
+*:focus {
+    outline: none;
+}
+
+/********** Background and logo **********/
+
+.background-image {
+    width: 100%; 
+    display: none;
+}
+
+.background-image.visible {
+    display: block;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    color:white;
+    font-size: 27px;
+    font-weight: 700;
+}
+
+/********** Containers **********/
+
+.main-container {
+    position: absolute;
+    top: 10vh;
+    left: 32%;
+    height: 80vh;
+    width: 36vw;
+}
+
+.input-container{
+    display: flex;
+    align-items: center;
+    margin-top: 7%;
+    height: 7vh;
+    width: 36vw;
+    border: none;
+    border-radius: 7px;
+}
+
+.input-container.light, .tasks-container.light, input.light{
+    background-color: white;
+    color: hsl(235, 19%, 35%);
+}
+
+.input-container.dark, .tasks-container.dark, input.dark{
+    background-color: hsl(235, 24%, 19%);
+    color: hsl(234, 39%, 85%);
+}
+
+.tasks-container{
+    margin-top: 20px;
+    height: 55vh;
+    width: 36vw;
+    border: none;
+    border-radius: 7px;
+}
+
+.tasks-container.light{
+    box-shadow: 0px 15px 32px 4px rgba(195,195,195,0.85);
+}
+
+.switch-mode-icon{
+    display: none;
+    width: 20px;
+    align-self: center;
+}
+
+.switch-mode-icon.visible {
+    display: block;
+}
+
+/********** Tasks **********/
+
+.tasks {
+    height: 48vh;
+    overflow: scroll;
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    min-height: 7.5vh;
+}
+
+.task-text {
+    margin-left: 15px;
+    width: 29vw;
+}
+
+.done .task-text {
+    text-decoration: line-through;
+    color: hsl(233, 11%, 84%);
+}
+
+/********** Icons **********/
+
+.circle-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15px;
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+}
+
+.circle-icon.light {
+    border: 1px solid hsl(236, 33%, 92%);
+}
+
+.circle-icon.dark {
+    border: 1px solid hsl(233, 14%, 35%);
+}
+
+.circle-icon:not(.inactive).clicked {
+    background-image: linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+
+.tasks-container .circle-icon:not(.clicked):hover {
+    border-color: hsl(280, 87%, 65%);
+}
+
+.circle-icon:not(.inactive).clicked .check-icon {
+    display: inline;
+}
+
+.check-icon{
+    display: none;
+    width: 50%;
+    height: 50%;
+}
+
+.delete-icon {
+    margin-left: 2px;
+}
+
+.task .delete-icon{
+    visibility: hidden;
+}
+
+.task:hover .delete-icon{
+    visibility: visible;
+}
+
+
+/********** Buttons **********/
+
+.control-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 15px;
+    height: 7vh;
+    font-size: 12px;
+    color: hsl(236, 9%, 61%);
+}
+
+.middle-control-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 10vw;
+}
+
+.outside-control-buttons {
+    display: none;
+}
+
+.control-btn:not(.clear-btn).active {
+    color: hsl(217, 64%, 48%);
+}
+
+.tasks-container.light .control-btn:not(.active):hover, .tasks-container.light .clear-btn:hover {
+    color: hsl(234, 17%, 35%);
+} 
+
+.tasks-container.dark .control-btn:not(.active):hover, .tasks-container.dark .clear-btn:hover {
+    color: hsl(234, 39%, 85%);
+}
+
+/********** Attribution **********/
+
+body.light .attribution, body.light .attribution a {
+    color: hsl(233, 11%, 84%);
+}
+body.dark .attribution, body.dark .attribution a  {
+    color: hsl(231, 11%, 24%);
+}
+.attribution {
+    margin-top: 50px;
+    font-size: 11px;
+    text-align: center; 
+}
+
+/********** Hidden class **********/
+
+.hidden {
+    display: none;
+}
+
+/********** Mobile version **********/
+
+@media (max-width: 750px) {
+    
+    body {
+        font-size: 12px;
+    }
+
+    input{
+        font-size: 12px;
+    }
+
+    /********** Background and logo **********/
+    
+    body.light {
+        background-image: url("../images/bg-mobile-light.jpg");
+    }
+    body.dark {
+        background-image: url("../images/bg-mobile-dark.jpg");
+    }
+   
+    .logo {
+        font-size: 17px;
+    }
+
+    /********** Containers **********/
+
+    .main-container {
+        width: 90vw;
+        top: 6vh;
+        left: 5%;
+    }
+
+    .input-container{
+        width: 90vw;
+    }
+
+    .tasks-container {
+        width: 90vw;
+    }
+
+    /********** Tasks **********/
+
+    .task-text {
+        width: 72vw;
+    }
+
+    /********** Icons **********/
+
+    .switch-mode-icon img{
+        width: 20px;
+    }
+
+   /********** Buttons **********/
+
+    .middle-control-buttons {
+        display: none;
+    }
+
+    .outside-control-buttons{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        height: 8vh;
+        width: 90vw;
+        font-size: 13px;
+        border: none;
+        border-radius: 7px;
+    }
+
+    body.light .outside-control-buttons {
+        background-color: white;
+        box-shadow: 0px 15px 32px 4px rgba(195,195,195,0.85);
+        
+    }
+
+    body.dark .outside-control-buttons {
+        background-color: hsl(235, 24%, 19%);
+    }
+
+    .outside-control-buttons button {
+        margin: 0 5px;
+    }
+
+    .control-buttons {
+        font-size: 11px;
+    }
+
+   /********** Attribution **********/
+
+    .attribution {
+        margin-top: 100px;
+    }
+}
