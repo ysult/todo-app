@@ -14,6 +14,8 @@ const tasksArray = [
 // State to check if "Active" button is clicked
 let isActive = false;
 
+const inputField = document.querySelector("input");
+
 // Inserts HTML to a task div
 function insertHTML(value, mode) {
   return `<div class="task-container"><div class="task"><span class="circle-icon ${mode}"> <img class="check-icon" src="images/icon-check.svg" alt="check-icon"/></span><span class="task-text">${value}</span><button class="delete-icon"><img src="images/icon-cross.svg" alt="delete" /></button></div><hr class="${mode}"/></div>`;
