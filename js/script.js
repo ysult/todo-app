@@ -108,7 +108,7 @@ $(".completed-btn").click(function () {
 $(".all-btn").click(function () {
   $(".task-container").not(".done").removeClass("hidden");
   $(".done").removeClass("hidden");
-  isActive = "false";
+  isActive = false;
 });
 
 // Deletes all completed tasks when "Clear completed" button is clicked
